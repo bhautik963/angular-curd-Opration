@@ -1,0 +1,76 @@
+<div class="container register">
+    <div class="row">
+        <div class="col-md-3 register-left">
+            <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+            <h3>Welcome Student!</h3>
+            <h6>It does not matter how slowly you go as long as you do not stop.</h6>
+           
+        </div>
+        
+        
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <h2 class="register-heading">Sign Up</h2>
+                    <form  [formGroup]="editForm"  (ngSubmit)="onSubmit()"> 
+                    <div class="row register-form"  >
+                     
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" formControlName="Enrollment_No"  required placeholder="Enrollment No *"   />
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="text" class="form-control" formControlName="name"   required placeholder="Name *" />
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="text" class="form-control" formControlName="age" placeholder="Age *"  />
+                            </div>
+                            <div class="form-group">
+                                <input type="date" class="form-control"  formControlName="dob" placeholder="Birth Date *" />
+                            </div>
+                            <!-- <div class="form-group">
+                                <div class="maxl">
+                                    <label class="radio inline"> 
+                                        <input type="radio" name="gender" value="male" checked>
+                                        <span> Male </span> 
+                                    </label>
+                                    <label class="radio inline"> 
+                                        <input type="radio" name="gender" value="female">
+                                        <span>Female </span> 
+                                    </label>
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                               <select class="form-control" formControlName="dept" name="five" >
+                                 <option *ngFor="let d of dept"  [value]="d">{{d}}</option>
+                               </select>
+                            </div>
+                            <div class="form-group">
+                               <select class="form-control" formControlName="branch" name="six" >
+                                 <option *ngFor="let d of branch"  [value]="d">{{d}}</option>
+                               </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" formControlName="result" placeholder="Your Result in CGPA *" name="seven" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text"  name="txtEmpPhone" formControlName="fees" class="form-control" placeholder="Fees *"  name="eight" />
+                            </div>
+                            
+                            <button type="submit" class="btnRegister"   value="Add">Add</button>    
+                            <button type="submit" class="btnRegister"   value="Update">Update</button>
+                            
+                        </div>
+                      
+                    </div>
+                </form>     
+                </div>
+            
+            </div>
+        
+    </div>
+
+</div>
