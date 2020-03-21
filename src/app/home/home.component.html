@@ -20,14 +20,14 @@
        
         <td scope="row"><a [title]="s.Enrollment_No"  [routerLink] = "['/student',id]">{{s.Enrollment_No|uppercase}}</a></td>
         <td scope="row" ><a [title]="s.S_name" [routerLink] = "['/student',id]">{{s.Name|uppercase}}</a></td>
-        <td >{{s.Age}}</td>
+        <td >{{s.Name}}</td>
         <td >{{s.Birth_Date}}</td>
         <td>{{s.Department}}</td>
         <td >{{s.Branch}}</td>
         <td >{{s.Result|percent}}</td>
         <td>{{s.Fees|currency:"INR"}}</td>
         <td>
-            <button class="btn btn-primary"  [routerLink]="['/update/', s._id]">Edit</button></td>
+            <button class="btn btn-primary"  [routerLink]="['/update/',s._id]">Edit</button></td>
         <!-- <td>   <button class="btn btn-primary"  (click)="delete(s)">Delete</button></td> -->
       </tr>
     </tbody>

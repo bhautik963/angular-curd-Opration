@@ -29,7 +29,7 @@ export class UpdateComponent implements OnInit {
     this.editForm = this.fb.group({
       Enrollment_No:['',[Validators.required]],
       name: ['', [Validators.required]],
-      age:['',[Validators.required]],
+      age:[''],
       dob:['',[]],
       dept:['',[]],
       branch:['',[]],

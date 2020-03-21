@@ -11,8 +11,11 @@ export class StudServiceService {
   public url: string = "http://localhost:5000/addstud";
   public one: string = "http://localhost:5000/getuser";
   public two: string = "http://localhost:5000";
-  constructor(private _http: HttpClient) { }
+
   headers = new HttpHeaders().set('Content-Type', 'application/json');
+
+  constructor(private _http: HttpClient) { }
+
   savestud(stude: stud) {
     return this._http.post<any>(this.url, stude);
   }
@@ -27,7 +30,8 @@ export class StudServiceService {
     return this._http.get(url, {headers: this.headers}).pipe(
       map((res: Response) => {
         return res || {}
-      })
+      }),
+      catchError(this.errorMgmt)
 
     )
   }
@@ -36,11 +40,23 @@ export class StudServiceService {
    updateEmployee(id, data): Observable<any> {
     let url = `${this.two}/update/${id}`;
     return this._http.put(url, data, { headers: this.headers }).pipe(
-      
+      catchError(this.errorMgmt) 
     )
   }
 
- 
+  // Error handling 
+  errorMgmt(error: HttpErrorResponse) {
+    let errorMessage = '';
+    if (error.error instanceof ErrorEvent) {
+      // Get client-side error
+      errorMessage = error.error.message;
+    } else {
+      // Get server-side error
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    console.log(errorMessage);
+    return throwError(errorMessage);
+  }
   
 
   
