@@ -1,6 +1,8 @@
-.active{
-    background-color:black;
-}
+
+a:link { color: white; }
+a:visited { color: purple; }
+a:hover { background: purple; }
+a:active { color: red; }
 .card{
   align-items: center;
   box-align: center;
@@ -14,22 +16,31 @@ body{
   align-items: center;
 }
 .navbar-brand,icon{
-  color: black;
+  color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .navbar-custom {
     color: #FFFFFF;
-    background-color:lightblue;
+    background-image: url("https://th.bing.com/th/id/OIP.2YcDFUtYnnUKjdzqWjLHSAHaA2?w=388&h=50&c=7&o=5&pid=1.7");
+    background-size: cover;
+    
 }
 .navbar-toggler{
     width: 47px;
     height: 34px;
-    background-color: #7eb444;
+   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0.5, 0.5, 0.5)' stroke-linecap='round' stroke-miterlimit='20' stroke-width='4' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     border:none;
 }
 .navbar-toggler .line{
     width: 100%;
     float: left;
     height: 2px;
-    background-color: #fff;
+    background-color: white;
     margin-bottom: 5px;
+}
+
+.nav-item{
+  color: darkorchid;
+
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
