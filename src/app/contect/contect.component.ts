@@ -16,7 +16,7 @@ export class ContectComponent implements OnInit {
 
   dept = ['SOE','SOS','SOM','SOPH'];
   branch = ['Computer','Civil',"MECH","BSC","MSC","Managment","Information Technology"];
-  model =  new stud("17SOECE11048",'Bhautik',21,'11/12/1999',this.dept[0],this.branch[0],7.00,35000);
+  model =  new stud("17SOECE11048",'Bhautik',21,'03/30/1998',this.dept[0],this.branch[0],7.00,35000);
   constructor(private studservice: StudServiceService,private router: Router) { }
   
   submitted = false;

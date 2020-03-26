@@ -3,13 +3,13 @@ export class stud{
   Enrollmentno: string;
   Name : string;
   age : number;
-  Bod : any;
+  Bod : string;
   dept:string;
   branch:string;
   result:number;
   fees:number;
 
-  constructor(Enrollmentno: string,Name : string,age : number,Bod : any,dept:string,branch:string,result:number,fees:number){
+  constructor(Enrollmentno: string,Name : string,age : number,Bod : string,dept:string,branch:string,result:number,fees:number){
             this.Enrollmentno = Enrollmentno;
             this.Name = Name;
             this.age = age;

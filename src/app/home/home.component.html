@@ -18,10 +18,10 @@
     <tbody *ngFor="let s of Repdata;let id = index">
       <tr>
        
-        <td scope="row"><a [title]="s.Enrollment_No"  [routerLink] = "['/student',id]">{{s.Enrollment_No|uppercase}}</a></td>
-        <td scope="row" ><a [title]="s.S_name" [routerLink] = "['/student',id]">{{s.Name|uppercase}}</a></td>
+        <td scope="row"[title]="s.Enrollment_No"  [routerLink] = "['/student',id]">{{s.Enrollment_No|uppercase}}</td>
+        <td scope="row" [title]="s.Name" [routerLink] = "['/student',id]">{{s.Name|uppercase}}</td>
         <td ><a >{{s.Age}}</a></td>
-        <td >{{s.Birth_Date|date}}</td>
+        <td >{{s.Birth_Date| date}}</td>
         <td>{{s.Department}}</td>
         <td >{{s.Branch}}</td>
         <td >{{s.Result}} CGPA</td>
