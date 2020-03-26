@@ -28,13 +28,13 @@ export class UpdateComponent implements OnInit {
     this.getEmployee(id);
     this.editForm = this.fb.group({
       Enrollment_No:['',[Validators.required]],
-      name: ['', [Validators.required]],
-      age:[''],
-      dob:['',[]],
-      dept:['',[]],
-      branch:['',[]],
-      result:['',[]],
-      fees:['',[]]
+      Name: ['', [Validators.required]],
+      Age:[''],
+      Birth_Date:['',[]],
+      Department:['',[]],
+      Branch:['',[]],
+      Result:['',[]],
+      Fees:['',[]]
     })
   }
 
@@ -54,13 +54,13 @@ export class UpdateComponent implements OnInit {
     this.studservice.getEmployee(id).subscribe(data => {
       this.editForm.setValue({ 
       Enrollment_No:data['Enrollment_No'],
-      name: data['Name'],
-      age:data['Age'],
-      dob:data['Birth_Date'],
-      dept:data['Department'],
-      branch:data['Branch'],
-      result:data['Result'],
-      fees:data['Fees'],
+      Name: data['Name'],
+      Age:data['Age'],
+      Birth_Date:data['Birth_Date'],
+      Department:data['Department'],
+      Branch:data['Branch'],
+      Result:data['Result'],
+      Fees:data['Fees'],
       });
     });
   }
@@ -68,13 +68,13 @@ export class UpdateComponent implements OnInit {
   updateEmployee() {
     this.editForm = this.fb.group({
       Enrollment_No:['',[Validators.required]],
-      name: ['', [Validators.required]],
-      age:['',[]],
-      dob:['',[]],
-      dept:['',[]],
-      branch:['',[]],
-      result:['',[]],
-      fees:['',[]]
+      Name: ['', [Validators.required]],
+      Age:[''],
+      Birth_Date:[''],
+      Department:[''],
+      Branch:[''],
+      Result:[''],
+      Fees:['']
     })
   }
 
@@ -85,6 +85,7 @@ export class UpdateComponent implements OnInit {
     } else {
       if (window.confirm('Are you sure?')) {
         let id = this.actRoute.snapshot.paramMap.get('id');
+        console.log(id);
         this.studservice.updateEmployee(id, this.editForm.value)
           .subscribe(res => {
             this.router.navigateByUrl('/home');

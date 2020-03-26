@@ -34,11 +34,13 @@ app.post('/addstud', function (req, res) {
 
 // Get single employee
 app.get('/read/:id',(req, res) => {
-    db.bhautik.findOne(req.params.id, (error, data) => {
+    db.bhautik.findOne({_id: mongoose.ObjectId(req.params.id)}, (error, data) => {
       if (error) {
         return next(error)
       } else {
         res.json(data)
+		console.log(data);
+
         
       }
     })
@@ -50,7 +52,7 @@ app.get('/read/:id',(req, res) => {
 
    // Update employee
 app.put('/update/:id',(req, res, next) => {
-    db.bhautik.update(req.params.id, {
+    db.bhautik.update({_id: mongoose.ObjectId(req.params.id)}, {
       $set: req.body
     }, (error, data) => {
       if (error) {
@@ -58,11 +60,13 @@ app.put('/update/:id',(req, res, next) => {
         console.log(error)
       } else {
         res.json(data)
+        
         console.log('Data updated successfully')
       }
     })
   })
-   
+
+
 
 
 app.get("/getuser",function(req,res){  
@@ -72,13 +76,22 @@ app.get("/getuser",function(req,res){
               }  
               else{                
                   res.send(data);  
-                  console.log(data);
                   
                   }  
           });  
   });
 
-
+  app.route('/delete/:id').delete((req, res, next) => {
+    db.bhautik.remove({_id: mongoose.ObjectId(req.params.id)}, (error, data) => {
+      if (error) {
+        return next(error);
+      } else {
+        res.status(200).json({
+          msg: data
+        })
+      }
+    })
+  })
 
 
 

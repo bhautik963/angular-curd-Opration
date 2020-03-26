@@ -10,6 +10,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { StudentdetailsComponent } from './studentdetails/studentdetails.component';
 import{ReactiveFormsModule,FormsModule  } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import{ StudServiceService} from './stud-service.service';
 import { UpdateComponent } from './update/update.component';
 const routes: Routes = [{path:'home',component:HomeComponent},{path:'About',component:AboutComponent}];
 @NgModule({
@@ -31,7 +32,7 @@ const routes: Routes = [{path:'home',component:HomeComponent},{path:'About',comp
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ StudServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

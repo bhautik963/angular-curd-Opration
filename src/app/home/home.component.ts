@@ -18,4 +18,23 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   this.studservice.GetUser().subscribe(data =>  this.Repdata = data)  
   }
+
+  // removeEmployee(s, index) {
+  //   if(window.confirm('Are you sure?')) {
+  //       this.studservice.deleteEmployee(s._id).subscribe((data) => {
+  //         this.Repdata.splice(index, 1);
+  //       }
+  //     )    
+  //   }
+  // }
+
+  removeEmployee(id) {
+    if(window.confirm('Are you sure?')) {
+        this.studservice.deleteEmployee(id).subscribe((data) => {
+               this.ngOnInit();
+                
+        }
+      )    
+    }
+  }
 }

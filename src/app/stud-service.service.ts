@@ -3,6 +3,8 @@ import { HttpClient,HttpHeaders, HttpErrorResponse } from '@angular/common/http'
 import { stud } from './Shared/stud';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+
+  
 @Injectable({
   providedIn: 'root'
 })
@@ -26,8 +28,8 @@ export class StudServiceService {
 
 
   getEmployee(id): Observable<any> {
-    let url = `${this.two}/read/${id}`;
-    return this._http.get(url, {headers: this.headers}).pipe(
+    let url2 = `${this.two}/read/${id}`;
+    return this._http.get(url2, {headers: this.headers}).pipe(
       map((res: Response) => {
         return res || {}
       }),
@@ -38,11 +40,20 @@ export class StudServiceService {
     
    // Update employee
    updateEmployee(id, data): Observable<any> {
-    let url = `${this.two}/update/${id}`;
-    return this._http.put(url, data, { headers: this.headers }).pipe(
+    let url3 = `${this.two}/update/${id}`;
+    return this._http.put<any>(url3, data, { headers: this.headers }).pipe(
       catchError(this.errorMgmt) 
     )
   }
+
+ // Delete employee
+ deleteEmployee(id): Observable<any> {
+  let url = `${this.two}/delete/${id}`;
+  return this._http.delete(url, { headers: this.headers }).pipe(
+    catchError(this.errorMgmt)
+  )
+}
+
 
   // Error handling 
   errorMgmt(error: HttpErrorResponse) {

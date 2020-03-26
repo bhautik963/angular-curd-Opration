@@ -11,7 +11,7 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <h2 class="register-heading">Sign Up</h2>
-                    <form  [formGroup]="editForm"  (ngSubmit)="onSubmit()"> 
+                    <form  [formGroup]="editForm" method="POST" (ngSubmit)="onSubmit()"> 
                     <div class="row register-form"  >
                      
                         <div class="col-md-6">
@@ -20,14 +20,14 @@
                             </div>
                             
                             <div class="form-group">
-                                <input type="text" class="form-control" formControlName="name"   required placeholder="Name *" />
+                                <input type="text" class="form-control" formControlName="Name"   required placeholder="Name *" />
                             </div>
                             
                             <div class="form-group">
-                                <input type="text" class="form-control" formControlName="age" required placeholder="Age *"  />
+                                <input type="text" class="form-control" formControlName="Age" required placeholder="Age *"  />
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control"  formControlName="dob" placeholder="Birth Date *" />
+                                <input type="text" class="form-control"  formControlName="Birth_Date" placeholder="Birth Date *" />
                             </div>
                             <!-- <div class="form-group">
                                 <div class="maxl">
@@ -44,20 +44,20 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                               <select class="form-control" formControlName="dept" name="five" >
+                               <select class="form-control" formControlName="Department" name="five" >
                                  <option *ngFor="let d of dept"  [value]="d">{{d}}</option>
                                </select>
                             </div>
                             <div class="form-group">
-                               <select class="form-control" formControlName="branch" name="six" >
+                               <select class="form-control" formControlName="Branch" name="six" >
                                  <option *ngFor="let d of branch"  [value]="d">{{d}}</option>
                                </select>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" formControlName="result" placeholder="Your Result in CGPA *" name="seven" />
+                                <input type="text" class="form-control" formControlName="Result" placeholder="Your Result in CGPA *" name="seven" />
                             </div>
                             <div class="form-group">
-                                <input type="text"  name="txtEmpPhone" formControlName="fees" class="form-control" placeholder="Fees *"  name="eight" />
+                                <input type="text"  name="txtEmpPhone" formControlName="Fees" class="form-control" placeholder="Fees *"  name="eight" />
                             </div>
         
                             <button type="submit" class="btnRegister"   value="Update">Update</button>
