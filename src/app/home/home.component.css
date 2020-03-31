@@ -5,6 +5,7 @@ thead{
 tbody{
     background-color: deepskyblue;
     color: black;
+    padding: 100em;
 }
 .border{
     border-radius: 2px;
@@ -23,18 +24,17 @@ th{
 a{
     color: cornsilk;
 }
-button{
-    font-size: 15px;
-}
-.hello{
+/* .hello{
   margin: 0;
   padding:0;
+  left: 2;
   background: lightcoral;
-}
+} */
 .card{
   width: 340px;
   background: #f1f1f1;
-  overflow: hidden;
+  left: 2%;
+  right: 2%;
   font-family: "montserrat",sans-serif;
   box-shadow: 0 0 20px #00000070;
 }
@@ -91,12 +91,12 @@ button{
 }
 
 .info-section{
-  padding: 40px;
-  padding-top: 0;
+  padding: 20px;
+  padding-top: 5;
   color:orange;
 }
 h2{
-  position: relative;
+  position:relative;
   font-size: 16px;
   color: blue;
 }
@@ -119,7 +119,7 @@ p{
 }
 .s-m a{
   text-decoration: none;
-  font-size: 20px;
+  font-size: 10px;
   color: #333;
   padding: 0 5px;
   transition: .4s;
@@ -127,3 +127,32 @@ p{
 .s-m a:hover{
   color: #778beb;
 }
+
+span{
+  left: 10;
+  right: 0;
+}
+.flex-cont {
+  right: 10;
+  flex:1;
+}
+.cards {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: left;
+	justify-content: left;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-top: 15px;
+	padding: 1.5%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+  background: #f1f1f1;
+  left: 2%;
+  right: 2%;
+  font-family: "montserrat",sans-serif;
+  box-shadow: 0 0 20px #00000070;
+
+}
+

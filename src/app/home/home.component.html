@@ -32,8 +32,9 @@
       </tr>
     </tbody>
   </table> -->
-  <tbody *ngFor="let s of Repdata;let id = index">
-<div class="card  middle hello" >
+  
+  <!-- <span  class=" flex-cont" *ngFor="let s of Repdata;let id = index">
+<div class="card  middle" >
       <div class="top-section">
         <img src="https://i.ytimg.com/vi/nYUm1lPfjDk/maxresdefault.jpg" alt="">
         <div class="menuicon">
@@ -59,7 +60,7 @@
 		<h2>Birth_Date
           <div class="border"></div>
         </h2>
-        {{s.Birth_Date}}
+        {{s.Birth_Date|date}}
 		<h2>Department
           <div class="border"></div>
         </h2>
@@ -71,7 +72,7 @@
 		<h2>Result
           <div class="border"></div>
         </h2>
-        {{s.Result}}
+        {{s.Result}} CGPA
 		<h2>Fees
           <div class="border"></div>
         </h2>
@@ -84,5 +85,6 @@
         </div>
       </div>
     </div>
-  </tbody>
+  </span> -->
+
   <!-- Birth_Date":null,"Department":null,"Branch":null,"Result":null,"Fees":null (click)="edituser(s._id)"  -->
