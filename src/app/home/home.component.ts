@@ -27,7 +27,9 @@ export class HomeComponent implements OnInit {
   //     )    
   //   }
   // }
-
+insert(){
+  this.router.navigateByUrl('/contect');
+}
   removeEmployee(id) {
     if(window.confirm('Are you sure?')) {
         this.studservice.deleteEmployee(id).subscribe((data) => {

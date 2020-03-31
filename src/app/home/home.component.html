@@ -1,4 +1,4 @@
-<table class="table table-striped">
+<!-- <table class="table table-striped">
     <thead>
       <tr>
         <th scope="col">Enrollment No</th>
@@ -31,6 +31,58 @@
       <td>   <button class="btn btn-primary"  (click)="removeEmployee(s._id)">Delete</button></td> 
       </tr>
     </tbody>
-  </table>
-  
+  </table> -->
+  <tbody *ngFor="let s of Repdata;let id = index">
+<div class="card  middle hello" >
+      <div class="top-section">
+        <img src="https://i.ytimg.com/vi/nYUm1lPfjDk/maxresdefault.jpg" alt="">
+        <div class="menuicon">
+          <span class="s1"></span>
+          <span class="s2"></span>
+        </div>
+        <div class="name">
+           <br>
+          <span>{{s.Enrollment_No|uppercase}}</span>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <h2>Name
+          <div class="border"></div>
+        </h2>
+        {{s.Name|uppercase}}
+        <h2>Age
+          <div class="border"></div>
+        </h2>
+        {{s.Age}}
+
+		<h2>Birth_Date
+          <div class="border"></div>
+        </h2>
+        {{s.Birth_Date}}
+		<h2>Department
+          <div class="border"></div>
+        </h2>
+        {{s.Department}}
+		<h2>Branch
+          <div class="border"></div>
+        </h2>
+        {{s.Branch}}
+		<h2>Result
+          <div class="border"></div>
+        </h2>
+        {{s.Result}}
+		<h2>Fees
+          <div class="border"></div>
+        </h2>
+        {{s.Fees|currency:"INR"}}
+        <div class="s-m">
+          <button class="btn btn-unique"(click)="insert()">Insert</button>
+          <button class="btn btn-unique" [routerLink]="['/update/',s._id]">Edit</button>
+          <button class="btn btn-unique"(click)="removeEmployee(s._id)">Delete</button>
+          
+        </div>
+      </div>
+    </div>
+  </tbody>
   <!-- Birth_Date":null,"Department":null,"Branch":null,"Result":null,"Fees":null (click)="edituser(s._id)"  -->
