@@ -10,9 +10,9 @@ import { catchError, map } from 'rxjs/operators';
 })
 export class StudServiceService {
 
-  public url: string = "http://localhost:5000/addstud";
-  public one: string = "http://localhost:5000/getuser";
-  public two: string = "http://localhost:5000";
+  public url: string = "https://bnodecurd.herokuapp.com/addstud";
+  public one: string = "https://bnodecurd.herokuapp.com/getuser";
+  public two: string = "https://bnodecurd.herokuapp.com/";
 
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
