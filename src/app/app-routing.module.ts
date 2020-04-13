@@ -14,7 +14,7 @@ const routes: Routes = [
               ,{path:'contect',component:ContectComponent},
               { path: 'update/:id', component: UpdateComponent },
               {path:'student/:id',component:StudentdetailsComponent},
-                  { path: '',redirectTo: 'about',pathMatch: 'full'},
+                  { path: '',redirectTo: 'home',pathMatch: 'full'},
                  { path: '**', component: PagenotfoundComponent }
                 ];
 
