@@ -13,7 +13,6 @@ import { StudServiceService } from './../stud-service.service';
 export class HomeComponent implements OnInit {
   Repdata;
   constructor(private studservice: StudServiceService,private router: Router){
-    this.ngOnInit();
   }
   ngOnInit(): void {
   this.studservice.GetUser().subscribe(data =>  this.Repdata = data)  

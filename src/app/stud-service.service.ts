@@ -12,7 +12,7 @@ export class StudServiceService {
 
   public url: string = "https://bnode123.herokuapp.com/addstud";
   public one: string = "https://bnode123.herokuapp.com/getuser";
-  public two: string = "https://bnode123.herokuapp.com/";
+  public two: string = "https://bnode123.herokuapp.com";
 
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
